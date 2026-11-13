@@ -1,0 +1,221 @@
+@import "tailwindcss";
+
+/* ══════════════════════════════════════════════════════════
+   VOXORA Design System – Warm Ivory + Deep Teal Theme
+══════════════════════════════════════════════════════════ */
+@theme {
+  /* ── Core Palette ──────────────────────────────────── */
+  --color-vox-bg:            #FAF7F0;
+  --color-vox-bg-alt:        #F4EFE5;
+  --color-vox-white:         #FFFFFF;
+  --color-vox-sidebar:       #0B5D48;
+  --color-vox-orange:        #E85D2A;
+  --color-vox-orange-dark:   #C44D20;
+  --color-vox-orange-soft:   #FFF3EE;
+  --color-vox-amber:         #E8A33D;
+  --color-vox-sage:          #7A9B57;
+  --color-vox-text:          #2B2A27;
+  --color-vox-text-sec:      #777777;
+  --color-vox-text-muted:    #AAAAAA;
+  --color-vox-border:        #E8E1D7;
+  --color-vox-shadow:        rgba(43,42,39,0.08);
+
+  /* ── Legacy aliases (for ProtectedRoute, etc.) ──── */
+  --color-surface:           #FAF7F0;
+  --color-surface-card:      #FFFFFF;
+  --color-surface-border:    #E8E1D7;
+  --color-primary-50:        #FFF3EE;
+  --color-primary-100:       #FFE4D5;
+  --color-primary-500:       #E85D2A;
+  --color-primary-600:       #0B5D48;
+  --color-primary-700:       #094A39;
+  --color-primary-900:       #052F24;
+  --color-primary-950:       #F4EFE5;
+  --color-accent-400:        #E8A33D;
+  --color-accent-500:        #E8A33D;
+
+  /* ── Typography ──────────────────────────────────── */
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+/* ── Reset ───────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+  background: #FAF7F0;
+  color: #2B2A27;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+#root { min-height: 100vh; }
+
+/* ── Scrollbar ───────────────────────────────────────────── */
+::-webkit-scrollbar { width: 5px; height: 5px; }
+::-webkit-scrollbar-track { background: #FAF7F0; }
+::-webkit-scrollbar-thumb { background: #D5CEBC; border-radius: 99px; }
+::-webkit-scrollbar-thumb:hover { background: #E85D2A; }
+
+/* ══════════════════════════════════════════════════════════
+   BUTTONS
+══════════════════════════════════════════════════════════ */
+.btn-primary {
+  display: inline-flex; align-items: center; justify-content: center;
+  gap: 6px; padding: 10px 20px; border-radius: 8px;
+  font-weight: 600; font-size: 0.9375rem; line-height: 1;
+  background: #E85D2A; color: #fff; border: none; cursor: pointer;
+  transition: background 0.18s ease, box-shadow 0.18s ease, transform 0.12s ease;
+  box-shadow: 0 2px 8px rgba(232,93,42,0.3);
+  text-decoration: none; white-space: nowrap;
+}
+.btn-primary:hover  { background: #C44D20; }
+.btn-primary:active { transform: scale(0.97); }
+.btn-primary:disabled { opacity: 0.5; cursor: not-allowed; }
+
+.btn-secondary {
+  display: inline-flex; align-items: center; justify-content: center;
+  gap: 6px; padding: 10px 20px; border-radius: 8px;
+  font-weight: 600; font-size: 0.9375rem; line-height: 1;
+  background: transparent; color: #2B2A27;
+  border: 1.5px solid #E8E1D7; cursor: pointer;
+  transition: background 0.18s ease, border-color 0.18s ease;
+  text-decoration: none; white-space: nowrap;
+}
+.btn-secondary:hover  { background: #F4EFE5; border-color: #c5bba8; }
+.btn-secondary:active { transform: scale(0.97); }
+
+.btn-ghost {
+  display: inline-flex; align-items: center; justify-content: center;
+  gap: 6px; padding: 7px 12px; border-radius: 6px;
+  font-weight: 500; font-size: 0.9rem; line-height: 1;
+  background: transparent; border: none; color: #777777;
+  cursor: pointer; transition: background 0.15s, color 0.15s;
+  text-decoration: none; white-space: nowrap;
+}
+.btn-ghost:hover { background: #F4EFE5; color: #2B2A27; }
+.btn-ghost:disabled { opacity: 0.4; cursor: not-allowed; }
+
+/* ══════════════════════════════════════════════════════════
+   CARDS
+══════════════════════════════════════════════════════════ */
+.card {
+  background: #FFFFFF; border: 1px solid #E8E1D7;
+  border-radius: 14px; padding: 24px;
+  box-shadow: 0 2px 8px rgba(43,42,39,0.06);
+}
+
+.card-sm {
+  background: #FFFFFF; border: 1px solid #E8E1D7;
+  border-radius: 12px; padding: 16px;
+  box-shadow: 0 1px 4px rgba(43,42,39,0.06);
+}
+
+/* ══════════════════════════════════════════════════════════
+   FORM ELEMENTS
+══════════════════════════════════════════════════════════ */
+.input {
+  width: 100%; background: #FFFFFF;
+  border: 1.5px solid #E8E1D7; border-radius: 8px;
+  padding: 10px 14px; color: #2B2A27; font-size: 0.9375rem;
+  outline: none; transition: border-color 0.18s, box-shadow 0.18s;
+  font-family: inherit;
+}
+.input::placeholder { color: #AAAAAA; }
+.input:focus { border-color: #E85D2A; box-shadow: 0 0 0 3px rgba(232,93,42,0.12); }
+
+.input-icon {
+  width: 100%; background: #FFFFFF;
+  border: 1.5px solid #E8E1D7; border-radius: 8px;
+  padding: 10px 14px 10px 40px; color: #2B2A27; font-size: 0.9375rem;
+  outline: none; transition: border-color 0.18s, box-shadow 0.18s;
+  font-family: inherit;
+}
+.input-icon::placeholder { color: #AAAAAA; }
+.input-icon:focus { border-color: #E85D2A; box-shadow: 0 0 0 3px rgba(232,93,42,0.12); }
+
+.select {
+  width: 100%; background: #FFFFFF;
+  border: 1.5px solid #E8E1D7; border-radius: 8px;
+  padding: 10px 36px 10px 14px; color: #2B2A27; font-size: 0.9375rem;
+  outline: none; cursor: pointer; appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23777777' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-repeat: no-repeat; background-position: right 14px center;
+  transition: border-color 0.18s, box-shadow 0.18s;
+  font-family: inherit;
+}
+.select:focus { border-color: #E85D2A; box-shadow: 0 0 0 3px rgba(232,93,42,0.12); }
+
+.label {
+  display: flex; align-items: center; gap: 6px;
+  font-size: 0.8125rem; font-weight: 600; color: #555550;
+  margin-bottom: 6px; letter-spacing: 0.01em;
+}
+
+/* ══════════════════════════════════════════════════════════
+   BADGES & CHIPS
+══════════════════════════════════════════════════════════ */
+.badge {
+  display: inline-flex; align-items: center; gap: 4px;
+  padding: 3px 10px; border-radius: 99px;
+  font-size: 0.75rem; font-weight: 600; white-space: nowrap;
+}
+.badge-orange { background: #FFF3EE; color: #E85D2A; border: 1px solid rgba(232,93,42,0.2); }
+.badge-teal   { background: rgba(11,93,72,0.1); color: #0B5D48; border: 1px solid rgba(11,93,72,0.2); }
+.badge-gray   { background: #F4EFE5; color: #777777; border: 1px solid #E8E1D7; }
+.badge-sage   { background: rgba(122,155,87,0.1); color: #5a7540; border: 1px solid rgba(122,155,87,0.2); }
+
+/* ══════════════════════════════════════════════════════════
+   TYPOGRAPHY HELPERS
+══════════════════════════════════════════════════════════ */
+.page-title {
+  font-size: 1.75rem; font-weight: 700; color: #2B2A27;
+  letter-spacing: -0.02em; line-height: 1.25;
+}
+.section-title {
+  font-size: 1.1rem; font-weight: 700; color: #2B2A27;
+  letter-spacing: -0.01em;
+}
+.text-sec { color: #777777; }
+.text-muted { color: #AAAAAA; }
+
+/* ══════════════════════════════════════════════════════════
+   LAYOUT
+══════════════════════════════════════════════════════════ */
+.page-wrapper { min-height: 100vh; background: #FAF7F0; }
+.container-app { max-width: 1280px; margin: 0 auto; padding: 0 24px; }
+@media (max-width: 640px) { .container-app { padding: 0 16px; } }
+
+/* ══════════════════════════════════════════════════════════
+   WAVEFORM ANIMATION
+══════════════════════════════════════════════════════════ */
+@keyframes wave {
+  0%, 100% { transform: scaleY(0.35); }
+  50%       { transform: scaleY(1); }
+}
+.wave-bar {
+  animation: wave 1.1s ease-in-out infinite;
+  transform-origin: bottom;
+}
+.wave-bar:nth-child(2)  { animation-delay: 0.09s; }
+.wave-bar:nth-child(3)  { animation-delay: 0.18s; }
+.wave-bar:nth-child(4)  { animation-delay: 0.27s; }
+.wave-bar:nth-child(5)  { animation-delay: 0.12s; }
+.wave-bar:nth-child(6)  { animation-delay: 0.21s; }
+.wave-bar:nth-child(7)  { animation-delay: 0.06s; }
+.wave-bar:nth-child(8)  { animation-delay: 0.33s; }
+
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+/* ══════════════════════════════════════════════════════════
+   SPINNER KEYFRAME
+   Explicitly defined here so the Loader2 inline style
+     animation: 'spin 1s linear infinite'
+   works independently of Tailwind's animate-spin utility.
+══════════════════════════════════════════════════════════ */
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
